@@ -17,7 +17,6 @@
         <module>taotao-manager-mapper</module>
         <module>taotao-manager-interface</module>
         <module>taotao-manager-service</module>
-        <module>taotao-manager-web</module>
     </modules>
 
     <dependencies>
@@ -46,5 +45,25 @@
                 </configuration>
             </plugin>
         </plugins>
+        <!-- 使用Maven部署的时候，xml和properties配置文件也一起部署到Tomcat -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <!-- 默认是以下配置 -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
     </build>
 </project>

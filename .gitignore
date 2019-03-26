@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+taotao-shop-online.iml
+.idea
+taotao-common/target
+taotao-common/taotao-common.iml
+taotao-manager/taotao-manager-pojo/target
+taotao-manager/taotao-manager-interface/target
+taotao-manager/taotao-manager-mapper/target
+taotao-manager-web/target
+taotao-manager/taotao-manager-service/target
