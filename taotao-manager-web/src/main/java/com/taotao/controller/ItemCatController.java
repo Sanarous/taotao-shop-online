@@ -22,13 +22,12 @@ public class ItemCatController {
 
     /**
      * 展示分类类目
-     * @param parentId
-     * @return
+     * @param parentId  父ID
+     * @return 通用返回类型的集合
      */
     @RequestMapping("/list")
     @ResponseBody
     public List<EasyUITreeNode> getItemCatList(@RequestParam(value="id",defaultValue="0") long parentId){
-        List<EasyUITreeNode> list = itemCatService.getItemCatList(parentId);
-        return list;
+        return itemCatService.getItemCatList(parentId);
     }
 }

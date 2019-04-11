@@ -5,7 +5,8 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <context:component-scan base-package="com.taotao.controller"/>
+    <context:property-placeholder location="classpath*:properties/*.properties"/>
+    <context:component-scan base-package="com.taotao"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
@@ -23,4 +24,15 @@
     <dubbo:registry protocol="zookeeper" address="192.168.12.132:2181"/>
     <dubbo:reference interface="com.taotao.service.ItemService" id="itemService"/>
     <dubbo:reference interface="com.taotao.service.ItemCatService" id="itemCatService"/>
+    <dubbo:reference interface="com.taotao.service.ItemParamService" id="itemParamService"/>
+    <dubbo:reference interface="com.taotao.service.ContentService" id="contentService"/>
+    <dubbo:reference interface="com.taotao.service.ContentCategoryService" id="contentCategoryService"/>
+
+    <!-- 定义多媒体文件上传解析器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设定默认编码 -->
+        <property name="defaultEncoding" value="UTF-8"/>
+        <!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+        <property name="maxUploadSize" value="5242880"/>
+    </bean>
 </beans>

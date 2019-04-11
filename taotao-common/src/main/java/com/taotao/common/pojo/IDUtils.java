@@ -2,7 +2,9 @@ package com.taotao.common.pojo;
 
 import java.util.Random;
 
-
+/**
+ * 商品ID以及商品图片名生成工具类
+ */
 public class IDUtils {
 
 	/**

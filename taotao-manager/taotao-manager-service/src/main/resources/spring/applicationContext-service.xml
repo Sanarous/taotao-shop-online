@@ -6,7 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!-- 配置service扫描 -->
-    <context:component-scan base-package="com.taotao.service" />
+    <context:component-scan base-package="com.taotao"/>
 
     <!-- 配置dubbo -->
     <!-- 提供方应用信息，用于计算依赖关系 -->
@@ -19,4 +19,8 @@
     <!-- 声明需要暴露的服务接口 -->
      <dubbo:service interface="com.taotao.service.ItemService" ref="itemServiceImpl" timeout="1200000"/>
      <dubbo:service interface="com.taotao.service.ItemCatService" ref="itemCatServiceImpl" timeout="1200000"/>
+    <dubbo:service interface="com.taotao.service.ItemParamService" ref="itemParamServiceImpl" timeout="1200000"/>
+    <dubbo:service interface="com.taotao.service.ContentService" ref="contentServiceImpl" timeout="1200000"/>
+    <dubbo:service interface="com.taotao.service.ContentCategoryService" ref="contentCategoryServiceImpl"
+                   timeout="1200000"/>
 </beans>

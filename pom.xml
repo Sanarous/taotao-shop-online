@@ -13,6 +13,5 @@
         <module>taotao-manager</module>
         <module>taotao-common</module>
         <module>taotao-manager-web</module>
-        <module>taotao-mbg</module>
     </modules>
 </project>
