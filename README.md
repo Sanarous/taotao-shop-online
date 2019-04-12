@@ -17,4 +17,4 @@
 - Solr  搜索服务
 
 整个淘淘商城是面向SOA架构的
-![](taotao-image/淘淘商城架构.png)
+![](taotao-image/images/taotao.png)
